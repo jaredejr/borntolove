@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Born to Love Apparel - Est. Curitiba, Brazil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #1a1a1a;
+            margin: 0;
+            background-color: #f4f1ea; /* Fallback color */
+        }
+
+        h1, h2, h3, .baskerville {
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        /* Layout Classes */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .bg-light {
+            background-image: url('images/textured-bg.jpg');
+            background-size: cover;
+            background-repeat: repeat;
+            background-position: center;
+        }
+
+        .bg-dark {
+            background-image: url('images/texture-practice.png'); /* Textura de carvão */
+            background-size: cover;
+            background-position: center;
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        .bg-solid-dark {
+            background-color: #333;
+            color: white;
+        }
+
+        /* Top Logo (Center) */
+        .top-logo {
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .top-logo img {
+            max-width: 180px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d88a4e;
+        }
+
+        /* Section: O Impacto (Hero/Manifesto) */
+        .section-impact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .section-impact .man-photo {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .section-impact .impact-content {
+            padding: 20px;
+        }
+
+        .section-impact h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #d88a4e;
+        }
+
+        .section-impact h3 {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: inherit;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .section-impact p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* Section: A Prática (Financial/Transparency) */
+        .section-practice {
+            text-align: center;
+        }
+
+        .section-practice h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .section-practice p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-practice strong {
+            color: #d88a4e;
+        }
+
+        .section-practice .report-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: white;
+            padding: 15px 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 2px solid white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .section-practice .report-btn:hover {
+            background-color: white;
+            color: #1a1a1a;
+        }
+
+        /* Section: O Símbolo (Branding) */
+        .section-symbol {
+            text-align: center;
+        }
+
+        .section-symbol img {
+            max-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .section-symbol h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-symbol p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Section: Pilares (Grid of Values) */
+        .section-pilares h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 60px;
+        }
+
+        .pilares-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .pilar-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .pilar-card img {
+            width: 70px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .pilar-card h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #d88a4e;
+            font-weight: 700;
+        }
+
+        .pilar-card p {
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+
+        /* Section: O Próximo Passo (CTA) */
+        .section-cta {
+            text-align: center;
+        }
+
+        .section-cta h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #ddd;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .section-cta p {
+            font-size: 32px;
+            line-height: 1.5;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .section-cta p strong {
+            color: #d88a4e;
+        }
+
+        .section-cta .action-btn {
+            display: inline-block;
+            background-color: #d88a4e;
+            color: white;
+            padding: 15px 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: none;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .section-cta .action-btn:hover {
+            background-color: #c0773f;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 1px solid #333;
+        }
+
+        footer strong {
+            color: #d88a4e;
+        }
+
+        .social-icons {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #d88a4e;
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .section-impact {
+                grid-template-columns: 1fr;
+            }
+            .pilares-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .pilares-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+		.social-icons img {
+			filter: invert(1); /* Inverte as cores (ex: de preto para branco ou vice-versa) */
+			transition: filter 0.3s;
+		}
+
+		/* Opcional: Adicionar um efeito no hover para destacar ao passar o mouse */
+		.social-icons a:hover img {
+			filter: invert(0.5) sepia(1) saturate(5) hue-rotate(345deg); /* Simula a cor terracota */
+		}
+    </style>
+</head>
+<body>
+
+    <header class="bg-light">
+        <div class="top-logo">
+            <img src="images/logo-center.png" alt="Born to Love Logo">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#quem-somos">Quem Somos</a></li>
+            <li><a href="#a-pratica">A Prática</a></li>
+            <li><a href="#pilares">Pilares</a></li>
+            <li><a href="#loja">Loja</a></li>
+            <li><a href="#relatorios">Relatórios</a></li>
+        </ul>
+    </nav>
+
+    <section id="quem-somos" class="bg-light">
+        <div class="container section-impact">
+            <img src="images/photo_legendarios.png" alt="Atitude" class="man-photo">
+            <div class="impact-content">
+                <h2>O IMPACTO</h2>
+                <h3>MANIFESTO BORN TO LOVE</h3>
+                <p>O mundo romantizou o amor até torná-lo inútil. Transformaram o ato mais visceral de doação em um sentimento passivo e confortável. Nós rejeitamos essa mentira. O amor exige movimento. O sentimento é irrelevante se não resulta em uma atitude prática. Ação precede emoção.</p>
+                <p><strong>Nosso referencial não é o senso comum. Nosso referencial é Cristo.</strong> O maior exemplo da história não ofereceu palavras de conforto vazias; Ele entregou a própria vida. O amor é sacrifício e serviço incondicional.</p>
+                <p>Nossas atitudes parecerão irracionais para quem apenas observa. A lógica utilitarista do mundo não consegue explicar o serviço incondicional. O entendimento só vem através da execução.</p>
+                <p>Desta forma, desconstruímos o romantismo passivo e provamos que o amor é uma ação prática e sacrificial em favor do outro. Nosso foco está na realidade nua, crua e muitas vezes difícil do serviço ao próximo.</p>
+                <p>Rejeitamos doações como ferramenta de marketing para parecer que somos bons. Usamos como obrigação operacional para provar que a nossa missão é real. Toda a rastreabilidade dessas transferências é pública. Exigimos de nós mesmos a mesma transparência que exigimos do mundo.</p>
+                <p>Pare de romantizar a vida.</p>
+                <p>O amor é uma atitude.</p>
+                <p><strong>BORN TO LOVE.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="a-pratica" class="bg-dark">
+        <div class="container section-practice">
+            <h2>A PRÁTICA: O Peso de Cada Peça</h2>
+            <p>O discurso morre se o custo não for assumido. Não fazemos promessas vagas sobre lucros futuros ou sobras de caixa no fim do ano. Nossa matemática é direta, individual e inegociável.</p>
+            <p>Exatamente <strong>10% do valor de cada peça</strong> que você adquire é imediatamente transferido para o serviço ao próximo.</p>
+            <p>Você não compra uma camiseta para que, eventualmente, nós decidamos fazer caridade com o faturamento global. O seu ato de compra é simultaneamente o seu ato de doação. A peça que você veste é apenas a prova física de que uma transferência real de recursos aconteceu. O nosso vestuário é a ponte; a sua atitude é o motor.</p>
+            <a href="#relatorios" class="report-btn">Acesse nossos relatórios de impacto</a>
+        </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="container section-symbol">
+            <img src="images/anatomical_heart.png" alt="Anatomical Heart Symbol">
+            <h2>O SÍMBOLO</h2>
+            <p>Amor não é um desenho infantil ou sentimento frágil.</p>
+            <p>É um órgão vital, visceral, que bombeia sangue e exige esforço para manter o corpo vivo.</p>
+            <p>Vestimos a realidade do sacrifício, não a ilusão do romance.</p>
+        </div>
+    </section>
+
+    <section id="pilares" class="bg-light">
+        <div class="container section-pilares">
+            <h2>NOSSOS PILARES</h2>
+            <div class="pilares-grid">
+                <div class="pilar-card">
+                    <img src="images/icon_verbo.png" alt="Icon Missão-Verbo">
+                    <h3>Missão-Verbo</h3>
+                    <p>Desconstruir o romantismo passivo e provar que o amor é uma ação prática e sacrificial.</p>
+                </div>
+                <div class="pilar-card">
+                    <img src="images/icon_cristo.png" alt="Icon Cristo-Referencial">
+                    <h3>Cristo-Referencial</h3>
+                    <p>O referencial absoluto e inegociável de sacrifício. É a régua pela qual medimos nossas atitudes.</p>
+                </div>
+                <div class="pilar-card">
+                    <img src="images/icon_ruptura.png" alt="Icon Ruptura Contra-Cultura">
+                    <h3>Ruptura Contra-Cultura</h3>
+                    <p>Rejeição do amor estético e confortável. Foco na realidade nua e crua da doação.</p>
+                </div>
+                <div class="pilar-card">
+                    <img src="images/icon_irracionalidade.png" alt="Icon Irracionalidade-Entendimento">
+                    <h3>Irracionalidade-Entendimento</h3>
+                    <p>As ações parecerão ilógicas para quem não vive esse princípio. O entendimento exige a execução.</p>
+                </div>
+                <div class="pilar-card">
+                    <img src="images/icon_atitude.png" alt="Icon Atitude-Ruptura">
+                    <h3>Atitude-Ruptura</h3>
+                    <p>Gatilho de ruptura cultural através do vestuário, transformando a atitude de sacrifício em padrão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-solid-dark">
+        <div class="container section-cta">
+            <h2>O PRÓXIMO PASSO</h2>
+            <p>Pare de romantizar a vida.</p>
+            <p>O amor é uma <strong>atitude</strong>.</p>
+            <a href="#loja" class="action-btn">Vista a Atitude</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-icons">
+			<a href="#"><img src="images/icon_fb.png" alt="Facebook" width="24" height="24"></a>
+			<a href="#"><img src="images/icon_ig.png" alt="Instagram" width="24" height="24"></a>
+			<a href="#"><img src="images/icon_tw.png" alt="Twitter" width="24" height="24"></a>
+			<a href="#"><img src="images/icon_yt.png" alt="YouTube" width="24" height="24"></a>
+		</div>
+        <p>BORN TO LOVE APPAREL - EST. <strong>CURITIBA, BRAZIL</strong></p>
+    </footer>
+
+</body>
+</html>
